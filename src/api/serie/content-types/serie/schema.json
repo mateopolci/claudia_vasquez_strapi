@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "series",
+  "info": {
+    "singularName": "serie",
+    "pluralName": "series",
+    "displayName": "Serie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 50
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "artworks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::artwork.artwork",
+      "mappedBy": "serie"
+    }
+  }
+}
