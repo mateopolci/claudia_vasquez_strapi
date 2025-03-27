@@ -57,6 +57,13 @@
       "relation": "manyToOne",
       "target": "api::serie.serie",
       "inversedBy": "artworks"
+    },
+    "year": {
+      "type": "string",
+      "maxLength": 4,
+      "minLength": 4,
+      "regex": "^2\\d{3}$",
+      "required": true
     }
   }
 }
