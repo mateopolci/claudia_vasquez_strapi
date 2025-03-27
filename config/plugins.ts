@@ -8,7 +8,9 @@ export default () => ({
                 api_secret: process.env.CLOUDINARY_SECRET,
             },
             actionOptions: {
-                upload: {},
+                upload: {
+                    transformation: [],
+                },
                 delete: {},
             },
         },
