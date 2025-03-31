@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "expos",
+  "info": {
+    "singularName": "expo",
+    "pluralName": "expos",
+    "displayName": "Expo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "details": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

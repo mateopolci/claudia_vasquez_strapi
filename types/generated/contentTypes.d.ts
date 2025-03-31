@@ -425,6 +425,57 @@ export interface ApiArtworkArtwork extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBioBio extends Struct.SingleTypeSchema {
+  collectionName: 'bios';
+  info: {
+    displayName: 'Bio';
+    pluralName: 'bios';
+    singularName: 'bio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    art_concept: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    biography: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::bio.bio'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiExpoExpo extends Struct.SingleTypeSchema {
+  collectionName: 'expos';
+  info: {
+    displayName: 'Expo';
+    pluralName: 'expos';
+    singularName: 'expo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    details: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::expo.expo'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSerieSerie extends Struct.CollectionTypeSchema {
   collectionName: 'series';
   info: {
@@ -967,6 +1018,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::artwork.artwork': ApiArtworkArtwork;
+      'api::bio.bio': ApiBioBio;
+      'api::expo.expo': ApiExpoExpo;
       'api::serie.serie': ApiSerieSerie;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
