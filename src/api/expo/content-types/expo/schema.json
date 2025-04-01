@@ -4,7 +4,8 @@
   "info": {
     "singularName": "expo",
     "pluralName": "expos",
-    "displayName": "Expo"
+    "displayName": "Expo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,22 @@
   "attributes": {
     "details": {
       "type": "blocks",
+      "required": true
+    },
+    "expo1": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "expo2": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }

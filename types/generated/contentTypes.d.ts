@@ -428,6 +428,7 @@ export interface ApiArtworkArtwork extends Struct.CollectionTypeSchema {
 export interface ApiBioBio extends Struct.SingleTypeSchema {
   collectionName: 'bios';
   info: {
+    description: '';
     displayName: 'Bio';
     pluralName: 'bios';
     singularName: 'bio';
@@ -437,7 +438,10 @@ export interface ApiBioBio extends Struct.SingleTypeSchema {
   };
   attributes: {
     art_concept: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    bio: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
     biography: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    concept: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -454,6 +458,7 @@ export interface ApiBioBio extends Struct.SingleTypeSchema {
 export interface ApiExpoExpo extends Struct.SingleTypeSchema {
   collectionName: 'expos';
   info: {
+    description: '';
     displayName: 'Expo';
     pluralName: 'expos';
     singularName: 'expo';
@@ -466,6 +471,8 @@ export interface ApiExpoExpo extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     details: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    expo1: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    expo2: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::expo.expo'> &
       Schema.Attribute.Private;

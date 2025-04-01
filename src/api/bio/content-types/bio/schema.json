@@ -4,7 +4,8 @@
   "info": {
     "singularName": "bio",
     "pluralName": "bios",
-    "displayName": "Bio"
+    "displayName": "Bio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,24 @@
     },
     "art_concept": {
       "type": "blocks",
+      "required": true
+    },
+    "bio": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "concept": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }
