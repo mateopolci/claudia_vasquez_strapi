@@ -428,6 +428,7 @@ export interface ApiArtworkArtwork extends Struct.CollectionTypeSchema {
 export interface ApiBannerBanner extends Struct.SingleTypeSchema {
   collectionName: 'banners';
   info: {
+    description: '';
     displayName: 'Banner';
     pluralName: 'banners';
     singularName: 'banner';
@@ -437,6 +438,7 @@ export interface ApiBannerBanner extends Struct.SingleTypeSchema {
   };
   attributes: {
     banner: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    bannerBio: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
