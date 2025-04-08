@@ -468,8 +468,10 @@ export interface ApiBioBio extends Struct.SingleTypeSchema {
   };
   attributes: {
     art_concept: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    art_concept_en: Schema.Attribute.Blocks & Schema.Attribute.Required;
     bio: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
     biography: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    biography_en: Schema.Attribute.Blocks & Schema.Attribute.Required;
     concept: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;

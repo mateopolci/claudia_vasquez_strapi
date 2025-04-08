@@ -20,21 +20,29 @@
       "required": true
     },
     "bio": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "concept": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
+      ]
+    },
+    "biography_en": {
+      "type": "blocks",
+      "required": true
+    },
+    "art_concept_en": {
+      "type": "blocks",
       "required": true
     }
   }
